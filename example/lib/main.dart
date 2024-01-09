@@ -21,7 +21,7 @@ class _MyAppState extends State<MyApp> {
     print('$title => $result.');
   }
 
-  List<Widget> buildTestButtons() {
+  List buildTestButtons() {
     List<Map<String, dynamic>> items = [
       {
         'InCallManager.start(audio)': () {
@@ -140,7 +140,7 @@ class _MyAppState extends State<MyApp> {
     }
 
     return items
-        .map((item) => RaisedButton(
+        .map((item) => ElevatedButton(
               onPressed: () async {
                 print('${item.keys.first}');
                 await item.values.first();
@@ -160,7 +160,7 @@ class _MyAppState extends State<MyApp> {
         body: new SingleChildScrollView(
           child: new Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: buildTestButtons(),
+            children: buildTestButtons().cast<Widget>(),
           ),
         ),
       ),
