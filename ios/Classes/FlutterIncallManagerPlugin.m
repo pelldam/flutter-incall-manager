@@ -335,8 +335,8 @@ ringbackUriType:(NSString *)ringbackUriType
     NSLog(@"FlutterInCallManager.turnScreenOff(): ios doesn't support turnScreenOff()");
 }
 
--setFlashOn:(BOOL)enabled
- brightness:(nonnull NSNumber *)brightness
+- (void)setFlashOn:(BOOL)enabled
+         brightness:(nonnull NSNumber *)brightness
 {
     if ([AVCaptureDevice class]) {
         AVCaptureDevice *device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
