@@ -2,14 +2,17 @@ group 'com.cloudwebrtc.flutterincallmanager'
 version '1.0-SNAPSHOT'
 
 buildscript {
-    ext.kotlin_version = '1.9.0'
+    ext {
+        kotlin_version = '1.9.0'
+        gradle_version = '8.1.0'
+    }
     repositories {
         google()
         mavenCentral()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:8.1.0'
+        classpath "com.android.tools.build:gradle:$gradle_version"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
@@ -22,7 +25,7 @@ allprojects {
 
     plugins.withId('org.jetbrains.kotlin.android') {
         kotlin {
-            jvmToolchain(8)
+            jvmToolchain(17)
         }
     }
 }
@@ -43,12 +46,12 @@ android {
     }
 	
 	compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
      }
 
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = '17'
     }
 }
 
